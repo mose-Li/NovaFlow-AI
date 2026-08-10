@@ -6,18 +6,19 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green)
 ![SQLite](https://img.shields.io/badge/SQLite-Database-blue)
 ![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-orange)
+![RAG](https://img.shields.io/badge/AI-RAG-purple)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
-![Version](https://img.shields.io/badge/Version-v1.0-success)
+![Version](https://img.shields.io/badge/Version-v0.5.0-success)
 
 NovaFlow AI is an enterprise-oriented AI platform designed for intelligent document management, knowledge retrieval, AI-powered question answering, and enterprise knowledge assistants.
 
-Unlike traditional chatbot demos, NovaFlow AI focuses on production-ready Retrieval-Augmented Generation (RAG) architecture with modular design, explainable retrieval, hybrid search, and local Large Language Model deployment.
+Unlike traditional chatbot demos, NovaFlow AI focuses on production-oriented Retrieval-Augmented Generation (RAG) architecture with modular design, explainable retrieval, hybrid search, semantic chunking, reranking, and local Large Language Model deployment.
 
 ---
 
 # Current Version
 
-**Version 1.0**
+**Version 0.5.0**
 
 Enterprise Retrieval-Augmented Generation Platform
 
@@ -25,24 +26,24 @@ Enterprise Retrieval-Augmented Generation Platform
 
 # Table of Contents
 
-1. Project Overview
-2. Key Features
-3. System Architecture
-4. Technology Stack
-5. Project Structure
-6. Core Modules
-7. Retrieval Pipeline
-8. Database Design
-9. Quick Start
-10. REST API
-11. Testing
-12. Performance
-13. Screenshots
-14. Roadmap
-15. Project Highlights
-16. Documentation
-17. License
-18. Contact
+1. [Project Overview](#project-overview)
+2. [Key Features](#key-features)
+3. [System Architecture](#system-architecture)
+4. [Technology Stack](#technology-stack)
+5. [Project Structure](#project-structure)
+6. [Core Modules](#core-modules)
+7. [Retrieval Pipeline](#retrieval-pipeline)
+8. [Database Design](#database-design)
+9. [Quick Start](#quick-start)
+10. [REST API](#rest-api)
+11. [Testing](#testing)
+12. [Performance](#performance)
+13. [Screenshots](#screenshots)
+14. [Roadmap](#roadmap)
+15. [Project Highlights](#project-highlights)
+16. [Documentation](#documentation)
+17. [License](#license)
+18. [Contact](#contact)
 
 ---
 
@@ -50,7 +51,33 @@ Enterprise Retrieval-Augmented Generation Platform
 
 NovaFlow AI is a modular enterprise Retrieval-Augmented Generation platform designed for intelligent knowledge management.
 
-The platform combines dense semantic retrieval, sparse lexical retrieval, reranking, metadata filtering, diversity retrieval, dynamic ranking, and local Large Language Models to provide accurate, explainable, and privacy-preserving AI assistants.
+The platform combines:
+
+- Dense semantic retrieval
+- Sparse lexical retrieval
+- Hybrid retrieval
+- Score normalization
+- Weighted score fusion
+- Metadata filtering
+- Diversity filtering
+- Dynamic Top-K selection
+- CrossEncoder reranking
+- Context cleaning
+- Context deduplication
+- Source attribution
+- Local Large Language Models
+
+The goal is to provide accurate, explainable, privacy-friendly AI assistants for enterprise knowledge scenarios.
+
+NovaFlow AI is designed as a foundation for:
+
+- Enterprise knowledge bases
+- AI copilots
+- Intelligent document search
+- Internal knowledge assistants
+- Customer support systems
+- Document intelligence applications
+- Future AI workflow automation
 
 The architecture emphasizes:
 
@@ -58,10 +85,8 @@ The architecture emphasizes:
 - High maintainability
 - Modular design
 - Explainable retrieval
-- Production readiness
-- Local deployment
-
-NovaFlow AI can serve as the foundation for enterprise knowledge bases, AI copilots, intelligent document search, customer support systems, and future multi-agent workflows.
+- Production-oriented engineering
+- Local-first AI deployment
 
 ---
 
@@ -70,7 +95,11 @@ NovaFlow AI can serve as the foundation for enterprise knowledge bases, AI copil
 | Feature | Status |
 |----------|--------|
 | Document Upload | ✅ |
+| Document Parsing | ✅ |
+| Checksum Validation | ✅ |
 | Smart Chunking | ✅ |
+| Semantic Chunking | ✅ |
+| Chunk Overlap | ✅ |
 | Semantic Embedding | ✅ |
 | Vector Retrieval | ✅ |
 | BM25 Retrieval | ✅ |
@@ -81,22 +110,62 @@ NovaFlow AI can serve as the foundation for enterprise knowledge bases, AI copil
 | Diversity Retrieval | ✅ |
 | Dynamic Top-K | ✅ |
 | CrossEncoder Reranking | ✅ |
+| Context Cleaning | ✅ |
+| Context Deduplication | ✅ |
 | Source Attribution | ✅ |
 | Local LLM Integration | ✅ |
 | REST API | ✅ |
+| Automated Testing | ✅ |
 | Docker | 🚧 |
 | PostgreSQL | 🚧 |
 | Redis Cache | 🚧 |
 | Milvus / FAISS | 🚧 |
 | Multi-user Support | 🚧 |
+| Authentication / RBAC | 🚧 |
 
 ---
 
 # System Architecture
 
-> Enterprise Architecture
+NovaFlow AI follows a modular enterprise-oriented architecture separating document management, intelligent processing, retrieval, RAG orchestration, and local LLM inference.
 
-![Architecture](docs/images/architecture.png)
+## Enterprise System Architecture
+
+![NovaFlow AI System Architecture](docs/images/architecture.svg)
+
+The architecture is designed around clear separation of responsibilities and low coupling between major components.
+
+---
+
+## Retrieval Architecture
+
+![NovaFlow AI Retrieval Pipeline](docs/images/retrieval_pipeline.svg)
+
+The retrieval layer combines semantic vector search and BM25 lexical retrieval before applying score normalization, hybrid score fusion, metadata filtering, diversity filtering, dynamic Top-K selection, and CrossEncoder reranking.
+
+---
+
+## Database Architecture
+
+![NovaFlow AI Database Architecture](docs/images/database_er.svg)
+
+The database layer manages documents, document content, chunks, embeddings, and associated metadata.
+
+---
+
+## Deployment Architecture
+
+![NovaFlow AI Deployment Architecture](docs/images/deployment.svg)
+
+The deployment architecture supports the current local development environment while providing a foundation for future Docker, PostgreSQL, Redis, Kubernetes, and cloud-native deployment.
+
+---
+
+## Project Structure Architecture
+
+![NovaFlow AI Project Structure](docs/images/project_structure.svg)
+
+The project follows a modular backend structure separating API endpoints, services, retrieval, RAG, embedding, LLM, repositories, and utility components.
 
 ---
 
@@ -104,8 +173,8 @@ NovaFlow AI can serve as the foundation for enterprise knowledge bases, AI copil
 
 | Layer | Technology |
 |---------|------------|
-| Language | Python 3.12 |
-| Backend | FastAPI |
+| Programming Language | Python 3.12 |
+| Backend Framework | FastAPI |
 | Database | SQLite |
 | ORM | SQLAlchemy |
 | Embedding Model | BAAI/bge-small-en-v1.5 |
@@ -113,27 +182,45 @@ NovaFlow AI can serve as the foundation for enterprise knowledge bases, AI copil
 | Sparse Retrieval | BM25 |
 | Hybrid Retrieval | Weighted Score Fusion |
 | Reranker | BAAI/bge-reranker-base |
-| LLM | Ollama + Llama3.2 |
+| Local LLM | Ollama + Llama3.2 |
 | API | RESTful API |
 | Testing | Pytest |
 | Version Control | Git |
 | Documentation | Markdown |
 | Future Database | PostgreSQL |
-| Future Vector DB | Milvus / FAISS |
+| Future Vector Database | Milvus / FAISS |
+| Future Cache | Redis |
+| Future Deployment | Docker / Kubernetes |
 
 ---
 
-## Engineering Principles
+# Engineering Principles
 
 NovaFlow AI follows several software engineering principles.
 
-- High Cohesion
-- Low Coupling
-- Modular Architecture
-- Explainable AI
-- Enterprise Scalability
-- Local-first AI
-- Production-oriented Design
+### High Cohesion
+
+Each module focuses on a clearly defined responsibility.
+
+### Low Coupling
+
+Core services are designed to communicate through clear interfaces.
+
+### Modular Architecture
+
+Document processing, retrieval, RAG, LLM, API, and persistence layers are separated into independent modules.
+
+### Explainable AI
+
+The retrieval pipeline supports source attribution so that generated answers can be connected to retrieved knowledge.
+
+### Local-first AI
+
+Local LLM inference through Ollama enables sensitive enterprise knowledge to remain within the local environment.
+
+### Production-oriented Design
+
+The project structure is designed with future scalability, testing, deployment, and maintainability in mind.
 
 ---
 
@@ -145,318 +232,41 @@ NovaFlow-AI
 ├── backend/
 │   ├── api/
 │   ├── chunk/
+│   ├── core/
 │   ├── embedding/
 │   ├── llm/
+│   ├── parser/
 │   ├── rag/
-│   ├── retrieval/
 │   ├── repositories/
+│   ├── retrieval/
 │   ├── services/
 │   └── utils/
 │
 ├── config/
-├── database/
-├── docs/
-├── frontend/
-├── tests/
-├── uploads/
 │
-├── README.md
+├── database/
+│
+├── docs/
+│   ├── architecture/
+│   ├── diagrams/
+│   ├── images/
+│   ├── screenshots/
+│   └── user-guide/
+│
+├── frontend/
+│
+├── portfolio/
+│
+├── prompts/
+│
+├── tests/
+│   ├── data/
+│   └── ...
+│
+├── .gitignore
+├── CHANGELOG.md
+├── CONTRIBUTING.md
 ├── LICENSE
+├── README.md
+├── ROADMAP.md
 └── requirements.txt
-```
-
----
-
-# Core Modules
-
-- Document Management
-- Smart Chunk Engine
-- Embedding Service
-- Vector Search
-- BM25 Search
-- Hybrid Search
-- Metadata Filter
-- Diversity Filter
-- Dynamic Top-K
-- CrossEncoder Reranker
-- Prompt Builder
-- Chat Service
-- REST API
-
----
-
-# Retrieval Pipeline
-
-![Retrieval Pipeline](docs/images/retrieval_pipeline.png)
-
----
-
-# Database Design
-
-![Database ER](docs/images/database_er.png)
-
----
-
-# Quick Start
-
-## Clone Repository
-
-```bash
-git clone https://github.com/yourname/NovaFlow-AI.git
-cd NovaFlow-AI
-```
-
-## Create Virtual Environment
-
-```bash
-python -m venv .venv
-```
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
-## Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-## Start Ollama
-
-```bash
-ollama serve
-```
-
-```bash
-ollama pull llama3.2
-```
-
-## Initialize Database
-
-```bash
-python -m database.init_db
-```
-
-## Import Demo Documents
-
-```bash
-python -m tests.test_import_documents
-```
-
-## Start FastAPI
-
-```bash
-uvicorn backend.main:app --reload
-```
-
-Open Swagger:
-
-```
-http://127.0.0.1:8000/docs
-```
-
----
-
-# REST API
-
-## Document APIs
-
-| Method | Endpoint |
-|---------|----------|
-| POST | /documents/upload |
-| GET | /documents |
-| DELETE | /documents/{id} |
-
-## Retrieval APIs
-
-| Method | Endpoint |
-|---------|----------|
-| POST | /search |
-
-## Chat APIs
-
-| Method | Endpoint |
-|---------|----------|
-| POST | /chat |
-
-## Health
-
-| Method | Endpoint |
-|---------|----------|
-| GET | /health |
-
----
-
-# Testing
-
-The complete Retrieval-Augmented Generation pipeline has been validated through unit tests and integration tests.
-
-| Test | Status |
-|--------|--------|
-| Smart Chunking | ✅ |
-| Overlap Chunking | ✅ |
-| Large Document Chunking | ✅ |
-| Vector Retrieval | ✅ |
-| Hybrid Retrieval | ✅ |
-| Metadata Filtering | ✅ |
-| Diversity Filtering | ✅ |
-| Dynamic Top-K | ✅ |
-| Source Attribution | ✅ |
-| Chat Service | ✅ |
-
-Detailed screenshots are available under:
-
-```
-docs/testing/
-```
-
----
-
-# Performance
-
-| Metric | Current |
-|---------|---------|
-| Retrieval Strategy | Hybrid Retrieval |
-| Ranking | CrossEncoder |
-| Source Attribution | Supported |
-| Local Deployment | Supported |
-| Explainable Answer | Supported |
-
-Future benchmarks will include latency, throughput, retrieval accuracy, and memory usage.
-
----
-
-# Screenshots
-
-## Swagger API
-
-![Swagger](docs/images/swagger.png)
-
----
-
-## Chat Service
-
-![Chat](docs/images/chat.png)
-
----
-
-## Upload Documents
-
-![Upload](docs/images/upload.png)
-
----
-
-## Retrieval Pipeline
-
-![Pipeline](docs/images/retrieval_pipeline.png)
-
----
-
-# Roadmap
-
-## v1.1
-
-- Streaming Responses
-- Prompt Templates
-- Multi-file Retrieval
-
-## v1.2
-
-- PostgreSQL
-- Redis Cache
-- Docker Deployment
-
-## v1.5
-
-- Milvus
-- FAISS
-- Authentication
-- RBAC
-
-## v2.0
-
-- Enterprise Knowledge Base
-- Multi-Agent Collaboration
-- Workflow Engine
-- Kubernetes Deployment
-
----
-
-# Project Highlights
-
-### Enterprise Architecture
-
-Modular service-oriented architecture suitable for enterprise deployment.
-
-### Hybrid Retrieval
-
-Combines semantic retrieval and lexical retrieval for improved recall and precision.
-
-### Explainable AI
-
-Every generated answer supports source attribution.
-
-### Local AI
-
-Runs completely offline through Ollama.
-
-### Future-ready
-
-Designed for PostgreSQL, Redis, Milvus, Docker, Kubernetes and cloud-native deployment.
-
----
-
-# Documentation
-
-Detailed technical documentation is available under:
-
-```
-docs/
-```
-
-Including:
-
-- Architecture Design
-- Retrieval Pipeline
-- Database Design
-- API Documentation
-- Technical Specification
-
----
-
-# License
-
-This project is licensed under the MIT License.
-
-See the LICENSE file for details.
-
----
-
-# Contact
-
-GitHub
-
-```
-https://github.com/yourname
-```
-
-Freelancer
-
-```
-https://www.freelancer.com/u/yourname
-```
-
-Email
-
-```
-your@email.com
-```
