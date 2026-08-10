@@ -1,0 +1,11 @@
+NovaFlow-AI
+│
+├── backend
+├── config
+├── database
+├── docs
+├── frontend
+├── tests
+├── uploads
+├── README.md
+└── requirements.txt

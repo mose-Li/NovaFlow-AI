@@ -1,0 +1,34 @@
+User Question
+      │
+      ▼
+Embedding
+      │
+      ▼
+Vector Search
+      │
+      ├────────────┐
+      ▼            ▼
+Semantic       BM25
+Search         Search
+      │            │
+      └────┬───────┘
+           ▼
+Score Normalization
+           ▼
+Weighted Fusion
+           ▼
+Metadata Filter
+           ▼
+Diversity Filter
+           ▼
+Dynamic Top-K
+           ▼
+CrossEncoder
+           ▼
+Prompt Builder
+           ▼
+Local LLM
+           ▼
+Answer
+           ▼
+Sources

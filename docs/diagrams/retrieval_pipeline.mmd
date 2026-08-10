@@ -1,0 +1,61 @@
+flowchart TD
+
+    Q[User Question]
+
+    Embed[Generate Embedding]
+
+    Vector[Vector Search]
+
+    BM25[BM25 Search]
+
+    Merge[Merge Results]
+
+    Normalize[Score Normalization]
+
+    Fusion[Weighted Score Fusion]
+
+    Metadata[Metadata Filter]
+
+    Diversity[Diversity Filter]
+
+    TopK[Dynamic Top-K]
+
+    Rerank[CrossEncoder]
+
+    Prompt[Prompt Builder]
+
+    LLM[Ollama LLM]
+
+    Answer[Final Answer]
+
+    Source[Source Attribution]
+
+    Q --> Embed
+
+    Embed --> Vector
+
+    Embed --> BM25
+
+    Vector --> Merge
+
+    BM25 --> Merge
+
+    Merge --> Normalize
+
+    Normalize --> Fusion
+
+    Fusion --> Metadata
+
+    Metadata --> Diversity
+
+    Diversity --> TopK
+
+    TopK --> Rerank
+
+    Rerank --> Prompt
+
+    Prompt --> LLM
+
+    LLM --> Answer
+
+    Answer --> Source

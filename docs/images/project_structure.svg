@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000">
+<style>
+text{font-family:Arial;fill:#333} .t{font-size:30px;font-weight:bold} .l{font-size:18px;font-weight:bold} .s{font-size:14px}
+.box{fill:#fff;stroke:#4A6FA5;stroke-width:2;rx:12;ry:12}
+line{stroke:#4A6FA5;stroke-width:2;marker-end:url(#a)}
+</style><defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#4A6FA5"/></marker></defs>
+<text x="800" y="40" text-anchor="middle" class="t">Project Structure</text>
+<rect class="box" x="100" y="80" width="1400" height="820"/><text x="800.0" y="115" text-anchor="middle" class="l">NovaFlow-AI
+backend api chunk embedding llm rag retrieval repositories services
+config database docs frontend tests uploads</text>
+</svg>

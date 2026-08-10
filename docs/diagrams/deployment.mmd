@@ -1,0 +1,27 @@
+flowchart LR
+
+User
+
+Browser
+
+FastAPI
+
+ChatService
+
+SQLite
+
+Ollama
+
+Documents
+
+User --> Browser
+
+Browser --> FastAPI
+
+FastAPI --> ChatService
+
+ChatService --> SQLite
+
+ChatService --> Ollama
+
+SQLite --> Documents

@@ -1,0 +1,39 @@
+sequenceDiagram
+
+participant User
+
+participant API
+
+participant ChatService
+
+participant HybridSearch
+
+participant Reranker
+
+participant PromptBuilder
+
+participant Ollama
+
+User->>API: Ask Question
+
+API->>ChatService: chat()
+
+ChatService->>HybridSearch: search()
+
+HybridSearch-->>ChatService: contexts
+
+ChatService->>Reranker: rerank()
+
+Reranker-->>ChatService: ranked contexts
+
+ChatService->>PromptBuilder: build prompt
+
+PromptBuilder-->>ChatService: prompt
+
+ChatService->>Ollama: inference
+
+Ollama-->>ChatService: answer
+
+ChatService-->>API: response
+
+API-->>User: final answer

@@ -1,0 +1,61 @@
+flowchart TB
+
+    User[User]
+
+    API[FastAPI REST API]
+
+    ChatService[Chat Service]
+
+    DocumentService[Document Service]
+
+    ChunkEngine[Smart Chunk Engine]
+
+    EmbeddingService[Embedding Service]
+
+    HybridSearch[Hybrid Search]
+
+    VectorSearch[Vector Search]
+
+    BM25Search[BM25 Search]
+
+    Reranker[CrossEncoder Reranker]
+
+    PromptBuilder[Prompt Builder]
+
+    Ollama[Ollama LLM]
+
+    SQLite[(SQLite Database)]
+
+    User --> API
+
+    API --> ChatService
+
+    API --> DocumentService
+
+    DocumentService --> ChunkEngine
+
+    ChunkEngine --> EmbeddingService
+
+    EmbeddingService --> SQLite
+
+    ChatService --> HybridSearch
+
+    HybridSearch --> VectorSearch
+
+    HybridSearch --> BM25Search
+
+    VectorSearch --> SQLite
+
+    BM25Search --> SQLite
+
+    HybridSearch --> Reranker
+
+    Reranker --> PromptBuilder
+
+    PromptBuilder --> Ollama
+
+    Ollama --> ChatService
+
+    ChatService --> API
+
+    API --> User

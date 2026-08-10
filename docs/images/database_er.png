@@ -1,0 +1,29 @@
+Documents
+----------
+id
+filename
+checksum
+...
+
+        │
+        │ 1:N
+        ▼
+
+Chunks
+----------
+id
+document_id
+chunk_index
+content
+...
+
+        │
+        │ 1:1
+        ▼
+
+Embeddings
+----------
+id
+chunk_id
+embedding
+...

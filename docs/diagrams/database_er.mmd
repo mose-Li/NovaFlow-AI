@@ -1,0 +1,47 @@
+erDiagram
+
+DOCUMENTS ||--o{ CHUNKS : contains
+
+CHUNKS ||--|| EMBEDDINGS : owns
+
+DOCUMENTS {
+
+int id
+
+string filename
+
+string stored_filename
+
+string checksum
+
+int file_size
+
+string status
+
+datetime created_at
+
+}
+
+CHUNKS {
+
+int id
+
+int document_id
+
+int chunk_index
+
+text content
+
+}
+
+EMBEDDINGS {
+
+int id
+
+int chunk_id
+
+string model
+
+text embedding
+
+}
